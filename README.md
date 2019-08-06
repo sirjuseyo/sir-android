@@ -1,7 +1,7 @@
 
-[![](https://jitpack.io/v/13mile/nextm-lib.svg)](https://jitpack.io/#13mile/nextm-lib)
+[![](https://jitpack.io/v/sirjuseyo/sir-android.svg)](https://jitpack.io/#sirjuseyo/sir-android)
 
-# NEXTM-LIB
+# Sir-android
 
 
 ## Setup
@@ -18,6 +18,6 @@ allprojects {
 And add next dependencies in the build.gradle of the module:
 ```gradle
 dependencies {
-    implementation 'com.github.13mile:nextm-lib:0.0.10'
+    implementation 'com.github.sirjuseyo:sir-android:0.0.10'
 }
 ```

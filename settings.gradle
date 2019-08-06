@@ -1,1 +1,1 @@
-include ':app', ':nextm_lib'
+include ':app', ':sir_lib'

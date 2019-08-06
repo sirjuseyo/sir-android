@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "kr.nextm.ex.next_m_lib"
+        applicationId "com.sirjuseyo.sir_lib"
         minSdkVersion 19
         targetSdkVersion 28
         versionCode 1
@@ -31,5 +31,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    compile project(":nextm_lib")
+    compile project(":sir_lib")
 }
