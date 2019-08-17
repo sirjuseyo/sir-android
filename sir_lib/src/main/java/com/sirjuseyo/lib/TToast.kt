@@ -9,10 +9,7 @@ import android.os.Looper
 import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
 import android.support.annotation.StringRes
-import android.view.Gravity
-import android.view.LayoutInflater
-import android.view.ViewGroup
-import android.view.WindowManager
+import android.view.*
 import android.widget.TextView
 import android.widget.Toast
 import org.intellij.lang.annotations.JdkConstants
@@ -34,7 +31,7 @@ class TToast : Toast(context) {
 
     private fun initCustomView() {
         val view = (context.getSystemService(Service.LAYOUT_INFLATER_SERVICE) as LayoutInflater)
-                .inflate(idCustomView!!, null)
+                .inflate(idLayoutRes!!, null)
 
         setGravity(Gravity.FILL_HORIZONTAL.or(Gravity.BOTTOM), 0, 100.dpToPixels())
 
@@ -48,7 +45,7 @@ class TToast : Toast(context) {
 
     override fun setText(s: CharSequence) {
         if (useCustomView()) {
-            val textView = view.findViewById(idMessageTextView!!) as TextView
+            val textView = view.findViewById(idTextView!!) as TextView
             textView.text = s
         } else {
             super.setText(s)
@@ -59,14 +56,24 @@ class TToast : Toast(context) {
 
         // custom view 사용시, 활성화 시키기
         @LayoutRes
-        private var idCustomView: Int? = null//R.layout.view_toast
+        private var idLayoutRes: Int? = null//R.layout.view_toast
         @IdRes
-        private var idMessageTextView: Int? = null//R.id.text_message
+        private var idTextView: Int? = null//R.id.text_message
 
-        private fun useCustomView() = idCustomView != null && idMessageTextView != null
+        fun setCustomView(@LayoutRes idLayoutRes:Int, @IdRes idTextView:Int) {
+            this.idLayoutRes = idLayoutRes
+            this.idTextView = idTextView
+        }
+
+        fun unSetCustomView() {
+            this.idLayoutRes = null
+            this.idTextView = null
+        }
+
+        private fun useCustomView() = idLayoutRes != null && idTextView != null
 
         private var lastToast: WeakReference<Toast>? = null
-        private var textSize:Float? = 25f
+        private var textSize:Float? = null
 
         @JvmStatic
         fun setTextSize(textSize:Float?) {
@@ -103,6 +110,7 @@ class TToast : Toast(context) {
 
                 return toast
             }
+
             val toast = Toast.makeText(context, text, duration)
             val group = toast.view as ViewGroup
             val messageTextView = group.getChildAt(0) as TextView
@@ -199,10 +207,7 @@ class TToast : Toast(context) {
 
         @JvmStatic
         fun clearLastOne() {
-            if (lastToast != null && lastToast!!.get() != null) {
-                lastToast!!.get()!!.cancel()
-            }
-
+            lastToast?.get()?.cancel()
             lastToast = null
         }
 
@@ -228,6 +233,7 @@ class TToast : Toast(context) {
                 show("DEBUG: Throwable: ${t.message}")
             }
         }
+
     }
 
 }
