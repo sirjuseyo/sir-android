@@ -12,6 +12,7 @@ import android.support.annotation.StringRes
 import android.view.*
 import android.widget.TextView
 import android.widget.Toast
+import io.jobtools.app_instance.AppInstance
 import org.intellij.lang.annotations.JdkConstants
 import java.lang.ref.WeakReference
 

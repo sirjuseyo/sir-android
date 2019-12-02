@@ -6,6 +6,7 @@ import android.support.v4.app.ActivityCompat
 import android.text.Html
 import android.text.Spanned
 import android.util.TypedValue
+import io.jobtools.app_instance.AppInstance
 
 private val app get() = AppInstance.get()
 
