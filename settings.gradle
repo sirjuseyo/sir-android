@@ -1,1 +1,1 @@
-include ':app', ':sir_lib'
+include ':app', ':android'

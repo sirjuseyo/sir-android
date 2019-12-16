@@ -1,7 +1,7 @@
 
-[![](https://jitpack.io/v/sirjuseyo/sir-android.svg)](https://jitpack.io/#sirjuseyo/sir-android)
+[![](https://jitpack.io/v/jobtools/android.svg)](https://jitpack.io/#jobtools/android)
 
-# Sir-android
+# android
 
 
 ## Setup
@@ -18,6 +18,6 @@ allprojects {
 And add next dependencies in the build.gradle of the module:
 ```gradle
 dependencies {
-    implementation 'com.github.sirjuseyo:sir-android:1.0.x'
+    implementation 'com.github.jobtools:android:1.0.0'
 }
 ```
