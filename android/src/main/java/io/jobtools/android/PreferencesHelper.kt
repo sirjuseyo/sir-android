@@ -3,7 +3,6 @@ package io.jobtools.android
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import io.jobtools.app_instance.AppInstance
 
 
 object PreferencesHelper {
