@@ -18,6 +18,6 @@ allprojects {
 And add next dependencies in the build.gradle of the module:
 ```gradle
 dependencies {
-    implementation 'com.github.sirjuseyo:sir-android:1.0.x'
+    implementation 'com.github.sirjuseyo:sir-android:1.0.5'
 }
 ```
